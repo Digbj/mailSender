@@ -32,17 +32,17 @@ function Mail() {
 
     // Make API request
     axios
-      .post("http://localhost:8000/subscribe", detail)
+      .post("https://mailsender-kwjd.onrender.com/subscribe", detail)
       .then((response) => {
         if (response.status === 200) {
-          setDetail({ name: "", email: "" }); 
-          setIsLoading(false); 
+          setDetail({ name: "", email: "" });
+          setIsLoading(false);
           console.log("You have been subscribed successfully:", response.data);
         }
       })
       .catch((error) => {
         console.error("Error sending form data:", error);
-        setIsLoading(false); 
+        setIsLoading(false);
       });
   };
 
